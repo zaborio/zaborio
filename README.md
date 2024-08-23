@@ -1,4 +1,3 @@
-
 # Projet de Référence Absolue Universelle (RAU)
 
 ## Introduction
@@ -11,9 +10,25 @@ Cet axiome simple mais puissant est au cœur de toutes les opérations et valida
 
 ## Connectez-vous au Réseau
 
-Pour interagir avec le réseau et tester les fonctionnalités, cliquez simplement sur le bouton ci-dessous.
+Pour interagir avec le réseau Ethereum via Metamask, cliquez simplement sur le bouton ci-dessous.
 
-[**Connect to Network**](#)
+<button id="connectButton">Connect to Network</button>
+
+<script>
+document.getElementById('connectButton').onclick = async function() {
+    if (typeof window.ethereum !== 'undefined') {
+        try {
+            // Demander à l'utilisateur de se connecter à Metamask
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+            console.log('Connecté à Metamask');
+        } catch (error) {
+            console.error('Erreur de connexion à Metamask', error);
+        }
+    } else {
+        alert('Metamask n\'est pas installé. Veuillez installer Metamask et réessayer.');
+    }
+};
+</script>
 
 ## Axiome Fondamental
 
@@ -30,20 +45,3 @@ Ce principe est la base de toutes les validations et calculs effectués dans ce 
    ```bash
    git clone https://github.com/votre-utilisateur/votre-repository.git
    cd votre-repository
-   ```
-
-2. **Installation des Dépendances**
-
-   ```bash
-   npm install
-   ```
-
-3. **Exécution des Tests**
-
-   ```bash
-   truffle test
-   ```
-
-## Développement Futur
-
-Ce README servira de guide vivant pour le
