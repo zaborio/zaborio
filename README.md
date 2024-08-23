@@ -1,6 +1,3 @@
-Je comprends mieux maintenant. Vous souhaitez que le bouton dans le fichier `README.md` agisse comme une sorte de boucle ou de redirection pour que, lorsque l'utilisateur clique dessus, il reste dans la même interface ou renvoie à une page spécifique sans quitter la vue du dépôt GitHub.
-
-Voici un modèle révisé pour le `README.md` qui inclut un bouton redirigeant vers une page spécifique tout en restant cohérent avec votre description :
 
 ### Exemple de `README.md`
 
