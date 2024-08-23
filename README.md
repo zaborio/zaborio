@@ -1,77 +1,118 @@
+Oui, vous pouvez simplifier le modèle préliminaire en utilisant la fenêtre README de votre GitHub pour intégrer directement les composants nécessaires. Voici une approche simplifiée qui tire parti des ressources de votre dépôt GitHub.
 
-### Exemple de `README.md`
+### **1. Préparation du Dépôt GitHub**
+
+1. **Créez un dépôt GitHub** avec les fichiers nécessaires pour le test.
+2. **Ajoutez un fichier README.md** dans votre dépôt GitHub avec les instructions pour tester la connexion avec MetaMask et Web3.
+
+### **2. Exemple de README.md**
+
+Ajoutez un fichier `README.md` avec les instructions de base pour le test. Vous pouvez inclure les instructions de déploiement et l'exemple de code simplifié.
 
 ```markdown
-# Projet QuantumConnect
+# Blockchain Test Interface
 
-Bienvenue dans le projet **QuantumConnect**. Ce dépôt est dédié à la démonstration de la connexion quantique en utilisant des concepts avancés de physique quantique.
+Ce dépôt contient une page HTML simple pour tester l'intégration avec MetaMask et la blockchain via Web3.js. 
 
-## Introduction
+## Instructions
 
-Ce projet explore des applications innovantes en physique quantique et en blockchain. Vous pouvez tester le connecteur de la blockchain et explorer notre modèle quantique directement via ce dépôt.
+1. **Cloner le dépôt**
 
-## Axiome Fondamental
-
-L'axiome fondamental de ce projet est **0=0**, qui représente notre point de départ pour les calculs et les simulations.
-
-## Utilisation
-
-Pour commencer avec ce projet, suivez ces étapes :
-
-1. **Clonez le Dépôt**
-
-   Utilisez Git pour cloner ce dépôt sur votre machine locale :
+   Clonez ce dépôt sur votre machine locale.
 
    ```bash
-   git clone https://github.com/zaborio/QuantumConnect.git
+   git clone https://github.com/votre-utilisateur/votre-repo.git
    ```
 
-2. **Accédez à la Page d'Accueil**
+2. **Ouvrir la page HTML**
 
-   Ouvrez le fichier `index.html` dans votre navigateur web pour accéder à l'interface utilisateur :
+   Accédez au fichier `index.html` dans le dépôt et ouvrez-le dans un navigateur web compatible avec MetaMask.
 
-   [Ouvrir index.html](https://github.com/zaborio/QuantumConnect/blob/main/index.html)
+## Code de Test
 
-3. **Connectez-vous**
+Voici le code pour la page HTML intégrée :
 
-   Utilisez le bouton "Connect" ci-dessous pour accéder à la documentation complète et aux outils disponibles :
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3 Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.12/babel.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { padding: 10px; font-size: 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+        const Web3 = window.Web3;
 
-   [Connect](index.html)
+        function ConnectButton() {
+            const [account, setAccount] = useState("");
+            const [network, setNetwork] = useState("");
 
-## Documentation
+            const connectWallet = async () => {
+                if (window.ethereum) {
+                    const web3 = new Web3(window.ethereum);
+                    try {
+                        const accounts = await web3.eth.requestAccounts();
+                        setAccount(accounts[0]);
+                        const networkId = await web3.eth.net.getId();
+                        setNetwork(networkId === 56 ? "Binance Smart Chain (Mainnet)" : "Other Network");
+                    } catch (error) {
+                        console.error("Connection error:", error);
+                    }
+                } else {
+                    console.error("MetaMask is not installed");
+                }
+            };
 
-La documentation complète et les détails techniques sont disponibles dans le fichier `index.html` et sur [notre page GitHub](https://github.com/zaborio).
+            return (
+                <div>
+                    {account ? (
+                        <div>
+                            <p>Connected as: {account}</p>
+                            <p>Network: {network}</p>
+                        </div>
+                    ) : (
+                        <button onClick={connectWallet}>Connect Wallet</button>
+                    )}
+                </div>
+            );
+        }
 
-## Contribuer
+        function App() {
+            return (
+                <div>
+                    <h1>Blockchain Interface Test</h1>
+                    <ConnectButton />
+                </div>
+            );
+        }
 
-Si vous souhaitez contribuer au projet :
-
-1. Forkez le dépôt.
-2. Créez une branche pour votre fonctionnalité ou correction de bug.
-3. Soumettez une pull request avec une description détaillée de vos changements.
-
-## Support
-
-Pour toute question ou problème, veuillez ouvrir une issue dans le dépôt ou contacter [support@quantumconnect.com](mailto:support@quantumconnect.com).
-
-## Licence
-
-Ce projet est sous la licence [MIT](LICENSE).
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
+```
 
 ## Notes
 
-- Assurez-vous de lire la documentation complète avant de commencer.
-- La configuration et le déploiement peuvent nécessiter des ajustements en fonction de votre environnement local.
-
----
-
-**QuantumConnect** - Développé avec passion pour l'innovation quantique.
+- **Assurez-vous que MetaMask est installé** et configuré pour le réseau Binance Smart Chain (Mainnet) si vous utilisez ce réseau.
+- **Le code ci-dessus** est un modèle simple pour tester la connexion avec MetaMask et Web3.js.
 ```
 
-### Explications
+### **3. Déploiement**
 
-- **Bouton "Connect"** : Le lien `[Connect](index.html)` dans le `README.md` pointe vers `index.html`. Sur GitHub, ce lien est relatif, donc si vous visualisez le `README.md` dans le contexte du dépôt, il essaiera de charger `index.html` dans le même contexte du dépôt.
+1. **Mettez à jour** le dépôt avec le code HTML simplifié.
+2. **Cloner** le dépôt localement si nécessaire, puis ouvrir `index.html` dans un navigateur pour tester.
 
-Assurez-vous que `index.html` est bien présent à la racine du dépôt pour que ce lien fonctionne correctement. Vous pouvez également vérifier que la page `index.html` s'ouvre correctement lorsque vous accédez au dépôt via GitHub.
-
-Pour un meilleur fonctionnement en local, assurez-vous que `index.html` est accessible à partir de la même structure de répertoires que le `README.md`. Si vous rencontrez toujours des problèmes, assurez-vous que les chemins relatifs sont correctement configurés et que la structure des fichiers est conforme à vos attentes.
+En utilisant cette méthode, vous simplifiez le processus de test préliminaire en centralisant les informations et les instructions dans le fichier README de votre GitHub. Vous pouvez également ajouter des instructions supplémentaires ou des notes selon les besoins spécifiques de votre projet.
