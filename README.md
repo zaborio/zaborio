@@ -1,51 +1,31 @@
-# Référence Absolue Universelle (RAU) - README
+# Référence Absolue Universelle (RAU)
+
+## Introduction
+La **Référence Absolue Universelle (RAU)** est une théorie qui repose sur l'axiome fondamental `0=0`, symbolisant l'invariance et la constance de l'information à travers les dimensions. Cette théorie explore la nature de la réalité en mettant en œuvre des calculs dimensionnels exponentiels et en intégrant des principes quantiques.
 
 ## Axiome Fondamental
+L'axiome central de la théorie RAU est simple et universel :
 
-Le projet de Référence Absolue Universelle (RAU) repose sur l'axiome suivant :
+**`0 = 0`**
 
-\[ 0 = 0 \]
-
-Cet axiome, d'une simplicité déconcertante, est le fondement de toutes les opérations, validations, et calculs effectués dans ce projet. Il sert de référence absolue et immuable dans l'univers de RAU.
-
-## Objectif du Projet
-
-L'objectif principal du projet est de fournir une structure simple, vérifiable et empiriquement prouvable qui peut être appliquée à des calculs dans diverses dimensions.
+Ce postulat représente une vérité universelle, immuable et non sujette à interprétation. Il sert de point de départ pour tous les calculs et interactions au sein du cadre théorique de RAU.
 
 ## Connexion au Réseau
+Pour interagir avec le réseau et explorer davantage la théorie RAU, veuillez utiliser le lien ci-dessous. Cette connexion permet de tester des interactions via un environnement Ethereum, en utilisant Metamask pour gérer les transactions.
 
-Pour interagir avec le réseau Ethereum via Metamask ou tout autre matériel compatible, utilisez le bouton ci-dessous.
+[**Connectez-vous au Réseau RAU**](https://zaborio.github.io/)
 
-<button id="connectButton">Connecter au Réseau</button>
+## Fonctionnalités
+- **Calculs Dimensionnels** : Exploration de calculs comme le calcul du π à travers différentes dimensions.
+- **Invariance de l'Information** : Confirmation empirique que l'information reste constante indépendamment du matériel utilisé.
+- **Interaction Quantique** : Simulations et expérimentations via des systèmes quantiques.
 
-<script>
-document.getElementById('connectButton').onclick = async function() {
-    if (typeof window.ethereum !== 'undefined') {
-        // Metamask détecté
-        try {
-            await window.ethereum.request({ method: 'eth_requestAccounts' });
-            console.log('Connecté à Metamask');
-        } catch (error) {
-            console.error('Erreur de connexion à Metamask', error);
-        }
-    } else if (typeof window.web3 !== 'undefined') {
-        // Legacy dApp browsers
-        alert('Votre navigateur est configuré pour fonctionner avec une ancienne version de Web3.');
-    } else if (/Android|iPhone/i.test(navigator.userAgent)) {
-        // Mobile detection
-        alert('Veuillez utiliser une application mobile compatible avec Ethereum.');
-    } else {
-        alert('Metamask n\'est pas installé. Veuillez installer Metamask ou utiliser un appareil compatible.');
-    }
-};
-</script>
+## Dépendances
+Ce projet utilise un minimum de dépendances matérielles pour garantir l'universalité et l'accessibilité de la théorie. Tous les calculs sont vérifiables et ne nécessitent pas de ressources matérielles spécifiques, permettant une flexibilité maximale dans l'implémentation.
 
-## Instructions pour l'Utilisation
+## Installation
+Clonez le repository pour explorer la théorie et interagir avec les modèles fournis :
 
-1. **Cloner le Repository**
-
-   Clonez le projet à partir de GitHub en utilisant la commande suivante :
-
-   ```bash
-   git clone https://github.com/votre-utilisateur/votre-repository.git
-   cd votre-repository
+```bash
+git clone https://github.com/zaborio/votre-repository.git
+cd votre-repository
