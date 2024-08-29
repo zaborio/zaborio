@@ -1,0 +1,27 @@
+{
+  "config": {
+    "chainId": 56,              // Identifiant de la chaîne BSC Mainnet
+    "homesteadBlock": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  },
+  "nonce": "0x0000000000000000",
+  "timestamp": "0x00",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "extraData": "0x00",
+  "gasLimit": "0xE8D4A50FFF",
+  "difficulty": "0x20000",
+  "mixHash": "0x00",
+  "coinbase": "0x00",
+  "alloc": {
+    "0x0000000000000000000000000000000000000000": { "balance": "0x0" }
+  },
+  "data": {
+    "Doris": {
+      "z": "0xValueForZ",
+      "y": "0xValueForY",
+      "x": "0xValueForX",
+      "initialValue": "0x00"
+    }
+  }
+}
