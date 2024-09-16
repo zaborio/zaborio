@@ -1,0 +1,22 @@
+{
+  "block": {
+    "index": 0,
+    "timestamp": "2024-09-15T00:00:00Z",
+    "previous_hash": "0",
+    "hash": "0",
+    "data": {
+      "genesis": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "t": 0,
+        "g": 0,
+        "i": 0,
+        "f": 0,
+        "state": "initial",
+        "description": "Initialisation du bloc Genesis selon la théorie RAU."
+      }
+    },
+    "nonce": 0
+  }
+}
